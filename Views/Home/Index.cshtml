@@ -1,0 +1,45 @@
+@using loginAndRegistration.Models
+@model User
+<link rel="stylesheet" href="~/css/site.css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <h1 class="white mr-auto text col">Registration</h1>
+    <a href="/loginuser" class="btn-btn-primary">Login Page</a>
+</nav>
+    <div class="container box">
+        <div class='row'>
+            <div class="container">
+                <form asp-action="Submit" asp-controller="Home" method="post">
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="FirstName"></span>
+                        <label asp-for="FirstName">First Name:</label>
+                        <input asp-for="FirstName" class="form-control" value=@TempData["First Name"]>
+                    </div>
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="LastName"></span>
+                        <label asp-for="LastName">Last Name:</label>
+                        <input asp-for="LastName" class="form-control" value=@TempData["Last Name"]>
+                    </div>
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="Email"></span>
+                        <label asp-for="Email">Email:</label>
+                        <input asp-for="Email" class="form-control" value=@TempData["Email"]>
+                    </div>
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="Password"></span>
+                        <label asp-for="Password">Password:</label>
+                        <input asp-for="Password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <span class="red" asp-validation-for="ConfirmPassword"></span>
+                        <label asp-for="ConfirmPassword">Confirm Password:</label>
+                        <input asp-for="ConfirmPassword" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
